@@ -1,0 +1,2 @@
+python-dotenv===0.3.0
+tap.py===1.8
