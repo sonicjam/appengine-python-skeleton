@@ -10,7 +10,7 @@ vendor.add('lib')
 
 # .env による環境変数の設定
 from dotenv import load_dotenv
-load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))  # ファイル名が . 始まりだとエラーになる。
 
 
 class MainHandler(webapp2.RequestHandler):
