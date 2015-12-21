@@ -6,7 +6,7 @@ Google App Engine Python アプリケーションの骨組。
 準備
 ----
 
-Google Cloud SDK をインストール:
+1) Google Cloud SDK をインストール:
 
 ```
 curl https://sdk.cloud.google.com | bash
@@ -16,7 +16,13 @@ curl https://sdk.cloud.google.com | bash
 
 インストール後、SDK の PATH が通った状態にしておく。
 
-PyPI から必要な Python パッケージを `./lib` ディレクトリにインストール:
+2) App Engine SDK for Python を追加インストール:
+
+```
+gcloud components install app-engine-python
+```
+
+3) PyPI から必要な Python パッケージを `./lib` ディレクトリにインストール:
 
 ```
 pip install -t ./lib -r ./requirements.txt
@@ -26,7 +32,7 @@ pip install -t ./lib -r ./requirements.txt
 開発
 ----
 
-テストサーバーの起動:
+1) 開発サーバーの起動:
 
 ```
 dev_appserver.py ./
@@ -34,14 +40,17 @@ dev_appserver.py ./
 
 次の URL から確認:
 
-- http://localhost:8080/ (app)
-- http://localhost:8000/ (dashboard)
+- <http://localhost:8080/> (app)
+- <http://localhost:8000/> (dashboard)
 
-テストランナーの実行:
+2) 単体テストの実行:
 
 ```
 GAE_SDK_PATH=/path/to/google-cloud-sdk/platform/google_appengine python ./test/runner.py
 ```
+
+- App Engine SDK for Python の PATH が `/path/to/google-cloud-sdk/platform/google_appengine` の場合
+- 出力は [TAP](https://testanything.org/)
 
 
 メンテナ
